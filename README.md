@@ -1,2 +1,2 @@
 # server-client
-Making a server and client in c++ test
+Making a server and client in python
