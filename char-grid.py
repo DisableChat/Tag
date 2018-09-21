@@ -48,6 +48,8 @@ def main(stdscr):
 
     # Hide Cursor
     curses.curs_set(0)
+
+    # Starting Possition
     Y_Cor = 2
     X_Cor = 0
 
@@ -56,7 +58,7 @@ def main(stdscr):
     while True:
         stdscr.addstr(0, 0, 'Y_Cor:{} X_Cor:{}'.format(Y_Cor, X_Cor))
         #editwin = curses.newwin(5,30, 2,1)
-        stdscr.addch(Y_Cor, X_Cor, '+', )
+        stdscr.addch(Y_Cor, X_Cor, '+', curses.A_UNDERLINE)
         Y_Cor, X_Cor = get_directional_input(Y_Cor, X_Cor, stdscr.getkey())
         stdscr.clear()
         stdscr.refresh()
