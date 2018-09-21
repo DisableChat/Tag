@@ -5,6 +5,10 @@ from curses import wrapper
 # MagikarpUsedFly
 ##
 
+# Grid min and max bounds player can move in grid
+MIN_BOUNDS = 0
+MAX_BOUNDS = 30
+
 ##
 # Messing around attempting to make a server/client run around game.
 ##
@@ -17,33 +21,44 @@ from curses import wrapper
 #   deicrement the value and return the new location value.
 ##
 def get_directional_input(loc_y, loc_x, value) -> int:
+
     if value == 'KEY_UP':
-        #stdscr.addstr('key up {}')
-        loc_y -= 1
+        if loc_y > MIN_BOUNDS:
+            loc_y -= 1
+        else:
+            loc_y
     elif value == 'KEY_DOWN':
-        #stdscr.addstr('key down')
-        loc_y += 1
+        if loc_y < MAX_BOUNDS:
+            loc_y += 1
+        else:
+            loc_y
     elif value == 'KEY_LEFT':
-        #stdscr.addstr('key left')
-        loc_x -= 1
+        if loc_x > MIN_BOUNDS:
+            loc_x -= 1
+        else:
+            loc_x
     else:
-        #stdscr.addstr('key right')
-        loc_x += 1
+        if loc_x < MAX_BOUNDS:
+            loc_x += 1
+        else:
+            loc_x
     return loc_y, loc_x
 
 def main(stdscr):
 
     # Hide Cursor
     curses.curs_set(0)
-    Y_Cor = 0
+    Y_Cor = 2
     X_Cor = 0
 
     # Loop to continually update Y_Cor and X_Cor, then clear the screen and
     # print the ascii symobl in correct location.
     while True:
+        stdscr.addstr(0, 0, 'Y_Cor:{} X_Cor:{}'.format(Y_Cor, X_Cor))
+        #editwin = curses.newwin(5,30, 2,1)
+        stdscr.addch(Y_Cor, X_Cor, '+', )
         Y_Cor, X_Cor = get_directional_input(Y_Cor, X_Cor, stdscr.getkey())
         stdscr.clear()
-        stdscr.addch(Y_Cor, X_Cor, '+')
         stdscr.refresh()
 
 
