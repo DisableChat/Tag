@@ -7,7 +7,7 @@ from curses import wrapper
 
 # Grid min and max bounds player can move in grid
 MIN_BOUNDS = 0
-MAX_BOUNDS = 30
+MAX_BOUNDS = 10
 
 ##
 # Messing around attempting to make a server/client run around game.
@@ -69,4 +69,4 @@ def main(stdscr):
     #stdscr.refresh()
     #stdscr.getkey()
 
-wrapper(main)
+#wrapper(main)
