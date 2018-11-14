@@ -1,2 +1,2 @@
-# server-client
-Making a server and client in python
+# Game of Tag in terminal
+Making a terminal game where users can play "tag"
