@@ -10,12 +10,12 @@ import draw
 
 def main(stdscr):
 
-    # Hide Cursor
-    curses.curs_set(0)
+    draw.scrnSetup(stdscr)
 
     # Player move 1 for player1 and 2 for player 2
     move =      1
-
+    playerOne = 1
+    playerTwo = 2
     # Starting Possition
     Y_Cor =     8
     X_Cor =     8
@@ -27,12 +27,13 @@ def main(stdscr):
     # print the ascii symobl in correct location.
     while True:
 
-        stdscr.addstr(0, 0, 'Y_Cor:{} X_Cor:{}'.format(Y_Cor, X_Cor))
-        stdscr.addstr(1, 0, 'Y2_Cor:{} X2_Cor:{}'.format(Y2_Cor, X2_Cor))
-        stdscr.addstr(12,12, 'Player Move:{}'.format(move))
+        draw.printLoc(stdscr, Y_Cor, X_Cor, 0, 0)
+        draw.printLoc(stdscr, Y2_Cor, X2_Cor, 1, 0)
+        draw.printPlayerMove(stdscr, move, 2, 0)
 
-        stdscr.addch(Y_Cor, X_Cor, '+', curses.A_UNDERLINE)
-        stdscr.addch(Y2_Cor, X2_Cor, '@', curses.A_UNDERLINE)
+
+        draw.printPlayer(stdscr, playerOne, Y_Cor, X_Cor)
+        draw.printPlayer(stdscr, playerTwo, Y2_Cor, X2_Cor)
 
 
         if move == 1:

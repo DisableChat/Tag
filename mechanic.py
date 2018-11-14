@@ -3,7 +3,7 @@
 
 # Grid min and max bounds player can move in grid
 MIN_BOUNDS = 0
-MAX_BOUNDS = 10
+MAX_BOUNDS = 25
 
 
 def tag(py1, py2, px1, px2):

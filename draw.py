@@ -1,25 +1,6 @@
 #draw
 import curses
 
-
-
-# Starting and declaring colors for the program
-curses.start_color()
-curses.init_pair(1, curses.COLOR_RED, curses.COLOR_BLACK)
-curses.init_pair(2, curses.COLOR_RED, curses.COLOR_YELLOW)
-curses.init_pair(3, curses.COLOR_BLUE, curses.COLOR_BLACK)
-curses.init_pair(4, curses.COLOR_GREEN, curses.COLOR_BLACK)
-curses.init_pair(5, curses.COLOR_YELLOW, curses.COLOR_BLACK)
-curses.init_pair(6, curses.COLOR_CYAN, curses.COLOR_BLACK)
-
-red                 = 1 # Red text with black background
-yellow_background   = 2 # Yellow background hurts eyes
-blue                = 3 # Blue text black background
-default             = 4 # Green text with black background
-yellow_text         = 5 # Yellow text with black bacground
-cyan_dots           = 6 # Blue dots when race is done
-
-
 # Winner function just displays a user has been tagged
 def winner(stdscr) -> None:
     # Hide Cursor
@@ -33,3 +14,35 @@ def winner(stdscr) -> None:
                 stdscr.addstr(i, k*4, 'TAG!')
 
         stdscr.refresh()
+
+
+def scrnSetup(stdscr) -> None:
+    # Hide Cursor
+    curses.curs_set(0)
+
+    curses.start_color()
+    curses.init_pair(2, curses.COLOR_RED, curses.COLOR_YELLOW)
+    yellow_background   = 2 # Yellow background hurts eyes
+
+    stdscr.bkgd(curses.color_pair(yellow_background))
+
+def printLoc(stdscr, CorY: int, CorX: int, startLoc_y: int, startLoc_x: int) -> None:
+    stdscr.addstr(startLoc_y, startLoc_x, 'Y_Cor:{} X_Cor:{}'.format(CorY, CorX))
+
+def printPlayerMove(stdscr, move: int, startLoc_y: int, startLoc_x: int) -> None:
+    stdscr.addstr(startLoc_y, startLoc_x, 'Player Move:{}'.format(move))
+
+def printPlayer(stdscr, Player: int, CorY: int, CorX: int) -> None:
+    # Hide Cursor
+    curses.curs_set(0)
+
+    curses.start_color()
+    curses.init_pair(6, curses.COLOR_CYAN, curses.COLOR_BLACK)
+    curses.init_pair(4, curses.COLOR_GREEN, curses.COLOR_BLACK)
+    cyan_dots  = 6 # Blue dots when race is done
+    default    = 4 # Green text with black background
+
+    if Player == 1:
+        stdscr.addch(CorY, CorX, '@', curses.color_pair(cyan_dots))
+    else:
+        stdscr.addch(CorY, CorX, '@', curses.color_pair(default))
