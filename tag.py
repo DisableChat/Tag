@@ -52,7 +52,7 @@ def main(stdscr):
                 X2_Cor = playerTwo_x
                 Y2_Cor = playerTwo_y
                 move = 1
-                
+
         stdscr.clear()
         stdscr.refresh()
 
