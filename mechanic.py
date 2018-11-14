@@ -6,7 +6,7 @@ MIN_BOUNDS = 0
 MAX_BOUNDS = 25
 
 
-def tag(py1, py2, px1, px2):
+def tag(py1: int, py2: int, px1: int, px2: int) -> bool:
     if py1 == py2 and px1 == px2:
         return True
     else:
@@ -20,7 +20,7 @@ def tag(py1, py2, px1, px2):
 # Description:  based on the directional input key of the user, increment or
 #   deicrement the value and return the new location value.
 ##
-def GPDI_P1(loc_y, loc_x, value) -> int:
+def GPDI_P1(loc_y : int, loc_x: int, value: int) -> int:
 
     if value == 'KEY_UP':
         if loc_y > MIN_BOUNDS:
@@ -48,7 +48,7 @@ def GPDI_P1(loc_y, loc_x, value) -> int:
     return loc_y, loc_x
 
 
-def GPDI_P2(loc_y, loc_x, value) -> int:
+def GPDI_P2(loc_y: int, loc_x: int, value: int) -> int:
 
     if value == 'w':
         if loc_y > MIN_BOUNDS:

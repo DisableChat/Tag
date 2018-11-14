@@ -2,7 +2,7 @@
 import curses
 
 # Winner function just displays a user has been tagged
-def winner(stdscr) -> None:
+def winner(stdscr: None) -> None:
     # Hide Cursor
     curses.curs_set(0)
     while True:
@@ -16,7 +16,7 @@ def winner(stdscr) -> None:
         stdscr.refresh()
 
 
-def scrnSetup(stdscr) -> None:
+def scrnSetup(stdscr: None) -> None:
     # Hide Cursor
     curses.curs_set(0)
 
@@ -33,13 +33,14 @@ def printPlayerMove(stdscr, move: int, startLoc_y: int, startLoc_x: int) -> None
     stdscr.addstr(startLoc_y, startLoc_x, 'Player Move:{}'.format(move))
 
 def printPlayer(stdscr, Player: int, CorY: int, CorX: int) -> None:
+
     # Hide Cursor
     curses.curs_set(0)
-
     curses.start_color()
+
     curses.init_pair(6, curses.COLOR_CYAN, curses.COLOR_BLACK)
     curses.init_pair(4, curses.COLOR_GREEN, curses.COLOR_BLACK)
-    cyan_dots  = 6 # Blue dots when race is done
+    cyan_dots  = 6 # Blue dots color
     default    = 4 # Green text with black background
 
     if Player == 1:
