@@ -1,17 +1,17 @@
-import curses
-from curses import wrapper
+#helper
 
-##
-# MagikarpUsedFly
-##
 
 # Grid min and max bounds player can move in grid
 MIN_BOUNDS = 0
 MAX_BOUNDS = 10
 
-##
-# Messing around attempting to make a server/client run around game.
-##
+
+def tag(py1, py2, px1, px2):
+    if py1 == py2 and px1 == px2:
+        return True
+    else:
+        return False
+
 
 ##
 # Function:     get_directional_input
@@ -20,7 +20,7 @@ MAX_BOUNDS = 10
 # Description:  based on the directional input key of the user, increment or
 #   deicrement the value and return the new location value.
 ##
-def get_directional_input(loc_y, loc_x, value) -> int:
+def GPDI_P1(loc_y, loc_x, value) -> int:
 
     if value == 'KEY_UP':
         if loc_y > MIN_BOUNDS:
@@ -37,36 +37,40 @@ def get_directional_input(loc_y, loc_x, value) -> int:
             loc_x -= 1
         else:
             loc_x
-    else:
+    elif value == 'KEY_RIGHT':
         if loc_x < MAX_BOUNDS:
             loc_x += 1
         else:
             loc_x
+    elif value == "v":
+        loc_y = loc_y
+        loc_x = loc_x
     return loc_y, loc_x
 
-def main(stdscr):
 
-    # Hide Cursor
-    curses.curs_set(0)
+def GPDI_P2(loc_y, loc_x, value) -> int:
 
-    # Starting Possition
-    Y_Cor = 2
-    X_Cor = 0
-
-    # Loop to continually update Y_Cor and X_Cor, then clear the screen and
-    # print the ascii symobl in correct location.
-    while True:
-        stdscr.addstr(0, 0, 'Y_Cor:{} X_Cor:{}'.format(Y_Cor, X_Cor))
-        #editwin = curses.newwin(5,30, 2,1)
-        stdscr.addch(Y_Cor, X_Cor, '+', curses.A_UNDERLINE)
-        Y_Cor, X_Cor = get_directional_input(Y_Cor, X_Cor, stdscr.getkey())
-        stdscr.clear()
-        stdscr.refresh()
-
-
-    #curses.echo()
-    #stdscr.clear()
-    #stdscr.refresh()
-    #stdscr.getkey()
-
-#wrapper(main)
+    if value == 'w':
+        if loc_y > MIN_BOUNDS:
+            loc_y -= 1
+        else:
+            loc_y
+    elif value == 's':
+        if loc_y < MAX_BOUNDS:
+            loc_y += 1
+        else:
+            loc_y
+    elif value == 'a':
+        if loc_x > MIN_BOUNDS:
+            loc_x -= 1
+        else:
+            loc_x
+    elif value == 'd':
+        if loc_x < MAX_BOUNDS:
+            loc_x += 1
+        else:
+            loc_x
+    elif value == "v":
+        loc_y = loc_y
+        loc_x = loc_x
+    return loc_y, loc_x
