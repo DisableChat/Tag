@@ -18,8 +18,8 @@ Making a terminal game where users can play "tag"
   libncurses5-dev: Developer’s libraries for ncurses
   libncursesw5-dev: Developer’s libraries for ncursesw
   ```
-  ### This can be done by:
-  ####
+  #### This can be done by:
+  #####
   1. Open the Terminal application.
   2. Type the following apt-get command to install ncurses header and libs: 
   ```
