@@ -2,14 +2,14 @@
 Making a terminal game where users can play "tag"
 
 ## Modules Needed
-  + curses (how to install on ubuntu under 'Help')
+  curses (how to install on ubuntu under 'Help')
   
 ## How to Play
-  + Player 1
-    + Move around: "wasd" keys 
+  ### Player 1
+    Move around: "wasd" keys 
     
-  + player 2
-    + Move around: "arrow" keys
+  ### player 2
+    Move around: "arrow" keys
 
 ## Help
   ### Installing curses
