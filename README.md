@@ -4,14 +4,14 @@ Making a terminal game where users can play "tag"
 ## Modules Needed
   + curses (how to install on ubuntu in # Help)
   
-### How to Play
+## How to Play
   + Player 1
     + Move around: "wasd" keys 
     
   + player 2
     + Move around: "arrow" keys
 
-#### Help
+## Help
   + install the following two packages: 
   ```
   libncurses5-dev: Developer’s libraries for ncurses
