@@ -2,7 +2,7 @@
 Making a terminal game where users can play "tag"
 
 ## Modules Needed
-  curses (how to install on ubuntu under 'Help')
+  curses
   
 ## How to Play
   ### Player 1
