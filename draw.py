@@ -104,4 +104,15 @@ def printBoundaries(stdscr: None, gridSize_X: int, gridSize_Y: int) -> None:
 # Description:  Prints the terrain of the map
 ##
 def printMap(stdscr: None) -> None:
-    stdscr.addch(9, 9, '#')
+
+    j = 1
+    for i in range(5):
+        stdscr.addch(i, j, '#')
+        for j in range(5):
+            stdscr.addch(i, j, '#')
+
+    j1 = 20
+    for i1 in range(18, 25, 1):
+        stdscr.addch(i1, j1, '#')
+        for j1 in range(20, 35, 1):
+            stdscr.addch(i1, j1, '#')

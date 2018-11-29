@@ -127,5 +127,19 @@ def GPDI_P2(loc_y: int, loc_x: int, value: int) -> int:
 #               bounds of the game
 ##
 def validSpace(loc_y: int, loc_x: int) -> bool:
-    if loc_y == 9 and loc_x == 9:
-        return False
+
+    j = 1
+    for i in range(5):
+        if loc_y == i and loc_x == j:
+            return False
+        for j in range(5):
+            if loc_y == i and loc_x == j:
+                return False
+
+    j1 = 20
+    for i1 in range(18, 25, 1):
+        if loc_y == i1 and loc_x == j1:
+            return False
+        for j1 in range(20, 35, 1):
+            if loc_y == i1 and loc_x == j1:
+                return False
