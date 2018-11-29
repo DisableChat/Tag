@@ -29,9 +29,9 @@ def main(stdscr):
     playerTwo = 2
 
     # Starting Possitions
-    Y_Cor =     8
+    Y_Cor =     7
     X_Cor =     8
-    Y2_Cor =    7
+    Y2_Cor =    8
     X2_Cor =    8
 
     try:
@@ -44,7 +44,11 @@ def main(stdscr):
             draw.printLoc(stdscr, Y2_Cor, X2_Cor, gridSize_Y + 2, 0)
             draw.printPlayerMove(stdscr, move, gridSize_Y + 3, 0)
 
+            # Print the boundries and map
             draw.printBoundaries(stdscr, gridSize_X, gridSize_Y)
+            draw.printMap(stdscr)
+
+            # Print the players
             draw.printPlayer(stdscr, playerOne, Y_Cor, X_Cor)
             draw.printPlayer(stdscr, playerTwo, Y2_Cor, X2_Cor)
 

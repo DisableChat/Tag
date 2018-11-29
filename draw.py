@@ -97,3 +97,11 @@ def printBoundaries(stdscr: None, gridSize_X: int, gridSize_Y: int) -> None:
     for k in range(gridSize_Y):
         stdscr.addstr(k, 0, '#')
         stdscr.addstr(k, gridSize_X, '#')
+
+##
+# Func:         printMap
+# Param:        stdscn: None, curses screen var
+# Description:  Prints the terrain of the map
+##
+def printMap(stdscr: None) -> None:
+    stdscr.addch(9, 9, '#')
