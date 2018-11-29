@@ -6,10 +6,10 @@ Making a terminal game where users can play "tag"
   
 ## How to Play
   ### Player 1
-    Move around: "wasd" keys 
+    Move around: "arrow" keys 
     
   ### player 2
-    Move around: "arrow" keys
+    Move around: "wasd" keys
 
 ## Help
   ### Installing curses
