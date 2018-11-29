@@ -5,10 +5,10 @@ Making a terminal game where users can play "tag"
   curses
   
 ## How to Play
-  ### Player 1
+  ### Player 1 (Blue)
     Move around: "arrow" keys 
     
-  ### player 2
+  ### player 2 (Green)
     Move around: "wasd" keys
 
 ## Help
