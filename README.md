@@ -9,10 +9,11 @@ Making a terminal game where users can play "tag"
   ```
   python3 tag.py
   ```
-  ### Player 1 (Blue)
+  ### Movement
+  #### Player 1 (Blue)
     Move around: "arrow" keys 
     
-  ### player 2 (Green)
+  #### player 2 (Green)
     Move around: "wasd" keys
 
 ## Help
