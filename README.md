@@ -5,11 +5,10 @@ Making a terminal game where users can play "tag"
   curses
   
 ## How to Play
-  Type the following in terminal
+  Type the following in terminal to run game:
   ```
   python3 tag.py
   ```
-  ### Movement
   #### Player 1 (Blue)
     Move around: "arrow" keys 
     
