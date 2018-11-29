@@ -30,9 +30,9 @@ def main(stdscr):
 
     # Starting Possitions
     Y_Cor =     8
-    X_Cor =     8
-    Y2_Cor =    7
-    X2_Cor =    8
+    X_Cor =     15
+    Y2_Cor =    8
+    X2_Cor =    16
 
     try:
         # Loop to continually update Y_Cor and X_Cor, then clear the screen and
@@ -44,7 +44,11 @@ def main(stdscr):
             draw.printLoc(stdscr, Y2_Cor, X2_Cor, gridSize_Y + 2, 0)
             draw.printPlayerMove(stdscr, move, gridSize_Y + 3, 0)
 
+            # Print the boundries and map
             draw.printBoundaries(stdscr, gridSize_X, gridSize_Y)
+            draw.printMap(stdscr)
+
+            # Print the players
             draw.printPlayer(stdscr, playerOne, Y_Cor, X_Cor)
             draw.printPlayer(stdscr, playerTwo, Y2_Cor, X2_Cor)
 

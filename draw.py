@@ -1,6 +1,9 @@
 ### draw for Tag.py ###
 import curses
 
+#NOTE/TODO Count: 1
+# drawmap()
+
 ##
 # Func:         winner
 # Param:        stdscn: None, curses screen var
@@ -12,10 +15,9 @@ def winner(stdscr: None) -> None:
     curses.curs_set(0)
     while True:
         stdscr.clear()
-        for i in range(10):
-            stdscr.addstr(i, 0, 'TAG!')
-            for k in range(5):
-                stdscr.addstr(i, k*4, 'TAG!')
+        for i in range(5, 15, 1):
+            for k in range(10, 34, 4):
+                stdscr.addstr(i, k, 'TAG!', curses.A_STANDOUT)
 
         stdscr.refresh()
 
@@ -91,9 +93,59 @@ def printPlayer(stdscr, Player: int, CorY: int, CorX: int) -> None:
 def printBoundaries(stdscr: None, gridSize_X: int, gridSize_Y: int) -> None:
 
     for i in range(gridSize_X + 1):
-        stdscr.addstr(0, i, '#')
-        stdscr.addstr(gridSize_Y, i, '#')
+        stdscr.addstr(0, i, '#', curses.A_REVERSE)
+        stdscr.addstr(gridSize_Y, i, '#', curses.A_REVERSE)
 
     for k in range(gridSize_Y):
-        stdscr.addstr(k, 0, '#')
-        stdscr.addstr(k, gridSize_X, '#')
+        stdscr.addstr(k, 0, '#', curses.A_REVERSE)
+        stdscr.addstr(k, gridSize_X, '#', curses.A_REVERSE)
+
+
+##***NOTE/TODO***##
+# Make a function for the double for loop and single for loop so you can pass
+# start y and start x cordinate as well as the incrment value, so then you can
+# call that funtion instead of having the repdiviness as seen belowe for printMap()
+##
+
+##
+# Func:         printMap
+# Param:        stdscn: None, curses screen var
+# Description:  Prints the terrain of the map
+##
+def printMap(stdscr: None) -> None:
+
+    # Top left block
+    for i in range(1, 5, 1):
+        for j in range(1, 5, 1):
+            stdscr.addch(i, j, '#', curses.A_BOLD)
+
+    # Bottom right block
+    for i in range(18, 25, 1):
+        for j in range(20, 35, 1):
+            stdscr.addch(i, j, '#', curses.A_BOLD)
+
+    # Top right small & block
+    for i in range(3, 5, 1):
+        for j in range(18, 21, 1):
+            stdscr.addch(i, j, '&', curses.A_BOLD)
+
+    # top right larger & block
+    for i in range(3, 5, 1):
+        for j in range(24, 29, 1):
+            stdscr.addch(i, j, '&', curses.A_BOLD)
+
+
+    for i in range(5, 10, 1):
+        stdscr.addch(i, i, '%', curses.A_BOLD)
+
+    for i in range(4, 9, 1):
+        stdscr.addch(i + 1, i, '%', curses.A_BOLD)
+
+    for i in range(3, 8, 1):
+        stdscr.addch(i + 2, i , '%', curses.A_BOLD)
+
+    for i in range(2, 7, 1):
+        stdscr.addch(i + 3, i , '%', curses.A_BOLD)
+
+    for i in range(1, 6, 1):
+        stdscr.addch(i + 4, i , '%', curses.A_BOLD)
