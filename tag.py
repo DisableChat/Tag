@@ -29,10 +29,10 @@ def main(stdscr):
     playerTwo = 2
 
     # Starting Possitions
-    Y_Cor =     7
-    X_Cor =     8
+    Y_Cor =     8
+    X_Cor =     15
     Y2_Cor =    8
-    X2_Cor =    8
+    X2_Cor =    16
 
     try:
         # Loop to continually update Y_Cor and X_Cor, then clear the screen and

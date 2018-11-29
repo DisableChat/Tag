@@ -128,18 +128,46 @@ def GPDI_P2(loc_y: int, loc_x: int, value: int) -> int:
 ##
 def validSpace(loc_y: int, loc_x: int) -> bool:
 
-    j = 1
+    # Top left block
     for i in range(5):
-        if loc_y == i and loc_x == j:
-            return False
         for j in range(5):
             if loc_y == i and loc_x == j:
                 return False
 
-    j1 = 20
-    for i1 in range(18, 25, 1):
-        if loc_y == i1 and loc_x == j1:
-            return False
-        for j1 in range(20, 35, 1):
-            if loc_y == i1 and loc_x == j1:
+    # Bottom right block
+    for i in range(18, 25, 1):
+        for j in range(20, 35, 1):
+            if loc_y == i and loc_x == j:
                 return False
+
+    # Top right small & block
+    for i in range(3, 5, 1):
+        for j in range(18, 21, 1):
+            if loc_y == i and loc_x == j:
+                return False
+
+    # top right larger & block
+    for i in range(3, 5, 1):
+        for j in range(24, 29, 1):
+            if loc_y == i and loc_x == j:
+                return False
+
+    for i in range(5, 10, 1):
+        if loc_y == i and loc_x == i:
+            return False
+
+    for i in range(4, 9, 1):
+        if loc_y == i + 1 and loc_x == i:
+            return False
+
+    for i in range(3, 8, 1):
+        if loc_y == i + 2 and loc_x == i:
+            return False
+
+    for i in range(2, 7, 1):
+        if loc_y == i + 3 and loc_x == i:
+            return False
+
+    for i in range(1, 6, 1):
+        if loc_y == i + 4 and loc_x == i:
+            return False
