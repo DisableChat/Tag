@@ -34,6 +34,10 @@ def main(stdscr):
     Y2_Cor =    8
     X2_Cor =    16
 
+    ## TODO:
+    # Make more specific error handling
+    # Giant try/except doesn't give specific errors so its harder to trace.
+    ##
     try:
         # Loop to continually update Y_Cor and X_Cor, then clear the screen and
         # print the ascii symobl in correct location.
