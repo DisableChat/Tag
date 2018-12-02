@@ -29,10 +29,10 @@ def main(stdscr):
     playerTwo = 2
 
     # Starting Possitions
-    Y_Cor =     8
-    X_Cor =     15
+    Y_Cor =     20
+    X_Cor =     10
     Y2_Cor =    8
-    X2_Cor =    16
+    X2_Cor =    26
 
     ## TODO:
     # Make more specific error handling
