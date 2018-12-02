@@ -104,7 +104,7 @@ def printBoundaries(stdscr: None, gridSize_X: int, gridSize_Y: int) -> None:
 ##***NOTE/TODO***##
 # Make a function for the double for loop and single for loop so you can pass
 # start y and start x cordinate as well as the incrment value, so then you can
-# call that funtion instead of having the repdiviness as seen belowe for printMap()
+# call that funtion instead of having the repdiviness as seen below for printMap()
 ##
 
 ##
